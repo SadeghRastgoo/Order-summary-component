@@ -1,0 +1,233 @@
+/* My Notes =>  */
+:root {
+  --color-primary: hsl(223, 47%, 23%);
+  --color-secondary: hsl(224, 23%, 55%);
+  --color-tertiary: hsl(245, 75%, 52%);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+
+html {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-size: 62.5%;
+  /* 1rem => 10px */
+}
+
+body {
+  font-size: 16px;
+  /* Default Font Size => 16px */
+  font-family: "Red Hat Display", sans-serif;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  background: #e0e6ff url(../images/pattern-background-mobile.svg) no-repeat;
+  background-size: cover;
+  background-position: 0 -100px;
+  color: var(--color-primary);
+}
+
+@media screen and (min-width: 900px) {
+  body {
+    background: #e0e6ff url(../images/pattern-background-desktop.svg) no-repeat;
+    background-position: 0 -200px;
+    background-size: cover;
+  }
+}
+
+.text-small {
+  font-size: 1.6rem;
+}
+
+.text-medium {
+  font-size: 1.8rem;
+}
+
+.text-large {
+  font-size: 2.5rem;
+}
+
+.font-bold {
+  font-weight: 900;
+}
+
+.font-regular {
+  font-weight: 700;
+}
+
+.font-light {
+  font-weight: 500;
+}
+
+.card {
+  width: 90%;
+  max-width: 400px;
+  margin: 5rem auto;
+  background-color: #fff;
+  border-radius: 18px;
+  overflow: hidden;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.35) 0px 30px 50px -10px;
+          box-shadow: rgba(0, 0, 0, 0.35) 0px 30px 50px -10px;
+}
+
+@media screen and (min-width: 900px) {
+  .card {
+    margin: 8rem auto;
+  }
+}
+
+.card__banner {
+  background: url(../images/illustration-hero.svg) no-repeat center;
+  background-size: cover;
+  width: 100%;
+  height: 200px;
+}
+
+.card__body {
+  padding: 2.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 2rem;
+}
+
+.card__title {
+  margin: 0;
+  color: var(--color-primary);
+}
+
+.card__text {
+  text-align: center;
+  color: var(--color-secondary);
+  line-height: 1.6;
+  max-width: 28ch;
+}
+
+.card__plan {
+  background: #f8f8fe;
+  border-radius: 8px;
+  width: 100%;
+  padding: 1.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+@media screen and (max-width: 350px) {
+  .card__plan {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 1.5rem;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .card__plan .plan__icon {
+    margin-right: 0;
+  }
+}
+
+.plan__icon {
+  -ms-flex-preferred-size: auto;
+      flex-basis: auto;
+  margin-right: 1.75rem;
+}
+
+.plan__texts {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 4px;
+}
+
+.plan__texts__type {
+  color: var(--color-primary);
+}
+
+.plan__texts__price {
+  color: var(--color-secondary);
+}
+
+.plan__change a {
+  color: var(--color-tertiary);
+  text-decoration-thickness: 2px;
+  -webkit-transition: color 0.25s;
+  transition: color 0.25s;
+}
+
+.plan__change a:hover {
+  text-decoration: none;
+  color: #2546ff;
+}
+
+.btn {
+  color: var(--color-secondary);
+  width: 100%;
+  padding: 1.75rem 2rem;
+  text-align: center;
+  border: none;
+  border-radius: 10px;
+  background: transparent;
+  cursor: pointer;
+  -webkit-transition-property: background, -webkit-box-shadow;
+  transition-property: background, -webkit-box-shadow;
+  transition-property: box-shadow, background;
+  transition-property: box-shadow, background, -webkit-box-shadow;
+  -webkit-transition-duration: 0.25s;
+          transition-duration: 0.25s;
+}
+
+.btn--primary {
+  background: var(--color-tertiary);
+  color: #fff;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.18) 0px 25px 25px -5px, rgba(0, 0, 0, 0.25) 0px 15px 10px -5px;
+          box-shadow: rgba(0, 0, 0, 0.18) 0px 25px 25px -5px, rgba(0, 0, 0, 0.25) 0px 15px 10px -5px;
+}
+
+.btn--primary:hover {
+  background: #7b64ef;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.18) 0px 25px 40px -5px, rgba(0, 0, 0, 0.25) 0px 15px 20px 0px;
+          box-shadow: rgba(0, 0, 0, 0.18) 0px 25px 40px -5px, rgba(0, 0, 0, 0.25) 0px 15px 20px 0px;
+}
+
+.btn--secondary {
+  margin-top: -1.25rem;
+}
+
+.btn--secondary:hover {
+  color: #000;
+}
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,182 @@
+/* My Notes =>  */
+
+:root {
+  --color-primary: hsl(223, 47%, 23%);
+  --color-secondary: hsl(224, 23%, 55%);
+  --color-tertiary: hsl(245, 75%, 52%);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+html {
+  box-sizing: border-box;
+  font-size: 62.5%; /* 1rem => 10px */
+}
+body {
+  font-size: 16px; /* Default Font Size => 16px */
+  font-family: "Red Hat Display", sans-serif;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  background: #e0e6ff url(../images/pattern-background-mobile.svg) no-repeat;
+  background-size: cover;
+  background-position: 0 -100px;
+  color: var(--color-primary);
+
+  @media screen and (min-width: 900px) {
+    background: #e0e6ff url(../images/pattern-background-desktop.svg) no-repeat;
+    background-position: 0 -200px;
+    background-size: cover;
+  }
+}
+
+// Components
+.text-small {
+  font-size: 1.6rem;
+}
+.text-medium {
+  font-size: 1.8rem;
+}
+.text-large {
+  font-size: 2.5rem;
+}
+
+.font-bold {
+  font-weight: 900;
+}
+.font-regular {
+  font-weight: 700;
+}
+.font-light {
+  font-weight: 500;
+}
+
+.card {
+  width: 90%;
+  max-width: 400px;
+  margin: 5rem auto;
+  background-color: #fff;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 30px 50px -10px;
+
+  @media screen and (min-width: 900px) {
+    margin: 8rem auto;
+  }
+}
+
+.card__banner {
+  background: url(../images/illustration-hero.svg) no-repeat center;
+  background-size: cover;
+  width: 100%;
+  height: 200px;
+}
+
+.card__body {
+  padding: 2.5rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.card__title {
+  margin: 0;
+  color: var(--color-primary);
+}
+
+.card__text {
+  text-align: center;
+  color: var(--color-secondary);
+  line-height: 1.6;
+  max-width: 28ch;
+}
+
+.card__plan {
+  background: rgb(248, 248, 254);
+  border-radius: 8px;
+  width: 100%;
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+
+  @media screen and (max-width: 350px) {
+    flex-direction: column;
+    gap: 1.5rem;
+    justify-content: center;
+
+    & .plan__icon {
+      margin-right: 0;
+    }
+  }
+}
+
+.plan__icon {
+  flex-basis: auto;
+  margin-right: 1.75rem;
+}
+
+.plan__texts {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.plan__texts__type {
+  color: var(--color-primary);
+}
+.plan__texts__price {
+  color: var(--color-secondary);
+}
+
+.plan__change a {
+  color: var(--color-tertiary);
+  text-decoration-thickness: 2px;
+  transition: color 0.25s;
+
+  &:hover {
+    text-decoration: none;
+    color: #2546ff;
+  }
+}
+
+.btn {
+  color: var(--color-secondary);
+  width: 100%;
+  padding: 1.75rem 2rem;
+  text-align: center;
+  border: none;
+  border-radius: 10px;
+  background: transparent;
+  cursor: pointer;
+  transition-property: box-shadow, background;
+  transition-duration: 0.25s;
+}
+.btn--primary {
+  background: var(--color-tertiary);
+  color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.18) 0px 25px 25px -5px,
+    rgba(0, 0, 0, 0.25) 0px 15px 10px -5px;
+
+  &:hover {
+    background: #7b64ef;
+
+    box-shadow: rgba(0, 0, 0, 0.18) 0px 25px 40px -5px,
+      rgba(0, 0, 0, 0.25) 0px 15px 20px 0px;
+  }
+}
+.btn--secondary {
+  margin-top: -1.25rem;
+  &:hover {
+    color: #000;
+  }
+}
